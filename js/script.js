@@ -1,38 +1,3 @@
-$(document).ready(function() {
-    
-    
-    /* For the sticky navigation */
-    $('.js--section-about').waypoint(function(direction) {
-        if (direction == "down") {
-            $('nav').addClass('sticky');
-        } else {
-            $('nav').removeClass('sticky');
-        }
-    }, {
-      offset: '60px;'
-    });
-    
-
-
-
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
-      });
-      
-}); 
-
-
 
 
 /****** MOBILE NAVIGATION IN ACTION ON CLICK*******/
@@ -55,8 +20,7 @@ function hideAndShow(screenSize) {
             centerLogo = document.getElementById('nav-logo').style.justifyContent = 'flex-start'
          );
 
-/////////////////////////************/////////////////////
-////////////THE MAIN CLICK FUNCTION PERFORMED HERE////////////////////////////////************//////////////////////
+        ///***///THE MAIN CLICK FUNCTION PERFORMED HERE///***///
         
 document.querySelector('.nav-icon').addEventListener('click', function() {
         if (display == document.querySelector('#nav-lists').style.display) {
@@ -92,19 +56,33 @@ document.querySelector('.nav-icon').addEventListener('click', function() {
 
     
 
+///***///THE IMAGE/TEXT CLICK FUNCTION PERFORMED HERE///***///
 
-
+var showImage = document.querySelector('#my-photo1').style.display = 'block';
  
 document.querySelector('.my-details').addEventListener('click', function() {
-    document.querySelector('#my-photo1').style.display = 'none';
-    
-    document.querySelector('#my-photo2').style.display = 'block';
-    document.querySelector('.showSomething').innerHTML = 'HOVER OVER THE DESCRIPTION';
-    document.querySelector('.showSomething').style.color = 'red';
-    document.querySelector('#it-works').style.overflow = 'unset';
+    if (showImage == document.querySelector('#my-photo1').style.display) {
+      document.querySelector('#my-photo1').style.display = 'none';
+      document.querySelector('#my-photo2').style.display = 'block';
+      document.getElementById('description-works-2').style.display = 'flex';
+      document.getElementById('description-works').style.display = 'none';
+      document.querySelector('.showSomething').style.display = 'none';
+      document.querySelector('.Cultural').style.display = 'flex';
+      document.getElementById('description-works-2').addClass.toggle('description-center');
+      
 
-    });
+    } else {
+      
+      document.querySelector('#my-photo1').style.display = 'block';
+      document.querySelector('#my-photo2').style.display = 'none';
+      document.getElementById('description-works-2').style.display = 'none';
+      document.getElementById('description-works').style.display = 'block';
+      document.querySelector('.showSomething').style.display = 'block';
+      document.querySelector('.Cultural').style.display = 'none';
+    }
 
+
+});
 
 
 

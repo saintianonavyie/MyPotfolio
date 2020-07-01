@@ -15,6 +15,7 @@ body {
     text-align: center;
     background-color: #e3e3e3;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 /*****REUSABLE COMPONENT*****/
@@ -113,7 +114,7 @@ header {
 
 .header-list {
     display: flex;
-    position: absolute;
+    position: fixed;
     margin: 0 auto;
     top: 0;
     width: 100%;
@@ -187,6 +188,8 @@ header {
 }
 
 /*****STICKY NAVIGATION*****/
+
+/**
 .sticky {
     position: fixed;
     margin: 0 auto;
@@ -259,7 +262,7 @@ header {
 .sticky .nav-list li a:hover {
     color: #eee;
     background-color: #e69600;
-}
+} */
 
 /*********HEADER--BODY--HEADINGS**********/
 
@@ -293,16 +296,19 @@ header h3 {
     justify-content: center;
 }
 
-.my-photo {
-    height: 300px;
-    width: 300px;
+.my-photo,
+#my-photo2  {
+    min-height: 55%;
+    min-width: 55%;
     border-radius: 5px;
+    margin: 0 auto;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 #my-photo2 {
     display: none;
-    margin-left: 155px;
+    margin: 0 auto;
 }
 
 .about .my-details .my-name {
@@ -314,27 +320,53 @@ header h3 {
     text-shadow: 4px 2px 2px #e69600;
 }
 
-.about .my-details p {
+.about .my-details .showSomething {
     color: #e69600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.about .my-details p:hover {
+.about .my-details .showSomething:hover {
     color: #001628;
     font-weight: 600;
     margin-top: 2px;
 }
 
-blockquote {
-    height: 50%;
-    overflow: hidden;
-    text-overflow: ellipsis; 
+.about .my-details .Cultural {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 70%;
+    text-align: center;
+    color: #fa4b4be6;
+    font-weight: 600;
 }
+.about .my-details .fa-arrow-right {
+    font-size: 180%;
+    font-weight: 800;
+}
+
+#description-works-2 {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.description-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
 
 blockquote:hover {
     color: #e69600;
     text-shadow: 1px 2px#001628;
-    overflow: unset;
-    text-overflow: unset; 
 }
 
 
@@ -439,8 +471,14 @@ blockquote:hover {
 /***************************************/
 
 .contacts {
-    height: 95vh;
     background-color: #f3f3f3f3;
+}
+
+.my-address,
+.contact-me {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
 }
 
 .my-address a {
@@ -465,7 +503,7 @@ blockquote:hover {
 
 .my-address .icon-links a {
     text-decoration: none;
-    font-size: 150%;
+    font-size: 140%;
 }
 
 .my-address .icon-links { margin: 3% auto;}
@@ -475,11 +513,6 @@ blockquote:hover {
     color: #00a0fdef;
 }
 
-.contact-me {
-    width: 100%;
-    padding: 10px;
-    margin: 0 auto;
-}
 
 .form-group {
     width: 100%;
@@ -492,10 +525,118 @@ textarea:focus {
 }
 
 textarea {
-    stroke-width: unset;
+    resize: none;
 }
 
 
 
+/***************************************/
+/*********FOOTER INFO*******/
+/***************************************/
+footer {
+    padding: 10px;
+    margin: 3% auto;
+}
+.footer-list {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    top: 0;
+    width: 100%;
+    padding: 0 15px;
+    z-index: 1000;
+}
+
+footer .nav {
+    display: flex;
+    align-items: center;
+}
+
+footer .nav .logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-left: 5%;
+}
+
+footer #nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+footer .nav-lists {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+footer .nav-lists li {
+    padding: 3px;
+    margin: 3px;
+    transform:  all 2s;
+}
+
+footer .nav-lists li:hover {
+    border-bottom: 2px solid #e69600;
+}
+
+footer .nav-lists li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 60%;
+    font-weight: 600;
+    padding: 10px 3px;
+    color: #666;
+    transform: all 2s;
+}
+
+footer .nav-lists li a:visited,
+footer .nav-lists li a:active, 
+footer .nav-lists li a:hover {
+    color: #666;
+    background-color: #e69600;
+}
+
+.footer-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.my-footer-address a {
+    padding: 10px;
+    color: #e69600;
+    font-size: 70%;
+    font-weight: 600;
+    word-spacing: 0px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.my-footer-address a .fa-whatsapp {
+    color: rgb(3, 202, 3);
+    font-size: 110%;
+}
+
+.my-footer-address a .fa-envelope {
+    font-size: 110%;
+}
+
+.my-footer-address .icon-links a {
+    text-decoration: none;
+    font-size: 110%;
+}
+
+.my-footer-address .icon-links { margin: 3% auto;}
+
+.my-footer-address .icon-links a .fa-facebook-f, 
+.my-footer-address .icon-links a .fa-twitter {
+    color: #00a0fdef;
+}
 
 
