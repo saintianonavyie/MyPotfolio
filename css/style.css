@@ -92,6 +92,7 @@ span {
 
 .btn:focus,
 .btn:focus-visible {
+    box-shadow: none;
     outline: none;
     border: none;
 }
@@ -527,7 +528,6 @@ textarea:focus {
 textarea {
     resize: none;
 }
-
 
 
 /***************************************/
